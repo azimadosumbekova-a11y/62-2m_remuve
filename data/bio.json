@@ -1,0 +1,7 @@
+{
+  "course": "Frontend",
+  "mentor": "Alex",
+  "students": 25,
+  "active": true,
+  "stack": ["HTML", "CSS", "JavaScript"]
+}

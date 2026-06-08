@@ -7,6 +7,7 @@ const phoneResult= document.querySelector('#phone_result')
 const regEx = /^\+996\s\d{3}\s\d{2}-\d{2}-\d{2}$/
 
 
+
 phoneButton.onclick =() => {
     if(regEx.test(phoneInpute.value)){
         phoneResult.innerHTML = " work"

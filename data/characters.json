@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tony Stark",
+    "age": 48,
+    "person_photo": "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/tony_stark.png"
+  },
+  {
+    "name": "Peter Parker",
+    "age": 18,
+    "person_photo": "https://upload.wikimedia.org/wikipedia/en/0/0f/Tom_Holland_as_Spider-Man.jpg"
+  },
+  {
+    "name": "Bruce Wayne",
+    "age": 35,
+    "person_photo": "https://i.redd.it/u8r3vi2gmazd1.jpeg"
+  }
+]

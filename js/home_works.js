@@ -19,7 +19,10 @@ btn.onclick = () => {
 //     if (event.key === "Enter") {
 //         checkGmail();
 //     }
-// });
+// })
+
+
+
 
 //  move blok
     const parentBlok = document.querySelector('.parent_block')
@@ -79,5 +82,58 @@ resetBtn.addEventListener('click', ()=>{
     seconds = 0 
     time.textContent = seconds
 })
+const request = new XMLHttpRequest();
+
+request.open("GET", "../data/characters.json");
+request.setRequestHeader("Content-type", "application/json");
+request.send();
+
+request.onload = () => {
+    if (request.status >= 200 && request.status < 300) {
+        const characters = JSON.parse(request.response);
+
+        const container = document.querySelector(".characters-list");
+
+        characters.forEach((character) => {
+            const card = document.createElement("div");
+            card.classList.add("character-card");
+
+            card.innerHTML = `
+                <div class="character-photo">
+                    <img src="${character.person_photo}" alt="${character.name}">
+                </div>
+                <h3>${character.name}</h3>
+                <p>Возраст: ${character.age}</p>
+            `;
+
+            container.append(card);
+        });
+    } else {
+        console.error("Ошибка загрузки JSON:", request.status);
+    }
+};
+
+request.onerror = () => {
+    console.error("Сетевая ошибка при запросе JSON");
+};
 
 
+// bio json 
+const bioRequest = new XMLHttpRequest();
+
+bioRequest.open("GET", "../data/bio.json");
+
+bioRequest.onload = () => {
+    if (bioRequest.status >= 200 && bioRequest.status < 300) {
+        const bio = JSON.parse(bioRequest.response);
+        console.log(bio);
+    } else {
+        console.error("Ошибка загрузки:", bioRequest.status);
+    }
+};
+
+bioRequest.onerror = () => {
+    console.error("Сетевая ошибка");
+};
+
+bioRequest.send();
